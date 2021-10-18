@@ -1,7 +1,9 @@
 Default Dotfile
 --
 
-## Bootstrap
+## Setup
+
+### STEP1: Install git
 
 Setup git first
 
@@ -12,10 +14,17 @@ See https://brew.sh/
 brew install git
 ```
 
+### Register sshkey
+
+```
+ssh-keygen
+cat ~/.ssh/id_rsa_pub
+```
+
 ## Install
 
 clone this repository and execute this command
 
 ```
-bash dotfiles/install.sh
+zsh dotfiles/install.sh
 ```
