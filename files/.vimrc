@@ -1,19 +1,22 @@
 syntax on
-colorscheme darkblue
 
+"about encode
+set encoding=utf-8
 set fileformats=unix
 
+"about tab
 set expandtab
 set shiftwidth=4
-set softtabstop=4
 set tabstop=4
-set backspace=indent,eol,start
+autocmd FileType make setlocal noexpandtab
 
 set hlsearch
 
-"statusline
+"about status line
 set laststatus=2
-set statusline=%F%r%=%l,%c
-highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
+set statusline+=%f
+set statusline+=%=
+set statusline+=[L%l,c%c]
 
-autocmd BufRead,BufNewFile *.tsv setfiletype tsv
+au BufNewFile,BufRead *.ts set filetype=text
+au BufNewFile,BufRead *.tsx set filetype=text
