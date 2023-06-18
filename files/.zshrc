@@ -15,7 +15,8 @@ PATH="${HOME}/bin:$PATH"
 # Nodejs Settings
 #
 eval "$(nodenv init -)"
-export PATH="/usr/local/opt/bzip2/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 #
 # Golang Settings
@@ -40,10 +41,15 @@ fpath=(
 
 autoload -Uz compinit
 compinit
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
+#
+# General Path
+#
+export PATH=$PATH:~/bin
+export PATH="/usr/local/sbin:$PATH"
 
 #
 # General Aliases
 #
 alias ll='ls -alFG'
+alias ls='ls -G'
