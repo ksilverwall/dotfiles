@@ -1,9 +1,13 @@
+function load_optional() {
+  if [ -e "${1}" ]; then
+    source ${1}
+  fi
+}
+
 #
 # Load Secret Environment Variable First
 #
-if [ -e "$file_path" ]; then
-  source ${HOME}/.zsh_secrets
-fi
+load_optional ${HOME}/.zsh_secrets
 
 #
 # GNU Commands
@@ -14,9 +18,8 @@ PATH="${HOME}/bin:$PATH"
 #
 # Nodejs Settings
 #
-eval "$(nodenv init -)"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Nodejs has many version manager then setting up in .zsh_local
 
 #
 # Golang Settings
@@ -53,3 +56,8 @@ export PATH="/usr/local/sbin:$PATH"
 #
 alias ll='ls -alFG'
 alias ls='ls -G'
+
+#
+# Local Settings (Setting up in each devices)
+#
+load_optional "${HOME}/.zsh_local"
