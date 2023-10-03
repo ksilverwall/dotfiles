@@ -3,28 +3,29 @@ Default Dotfile
 
 ## Setup
 
-### STEP1: Install git
+clone this repository and execute this command (need git)
 
-Setup git first
+```
+cd ~
+git clone git@github.com:ksilverwall/dotfiles.git
+zsh dotfiles/install.sh
+```
 
-See https://brew.sh/
+## Appendix: Setup git
+
+
+### Install git first
+
+Use homebrew. See https://brew.sh/
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install git
 ```
 
 ### Register sshkey
 
 ```
-ssh-keygen
-cat ~/.ssh/id_rsa_pub
+ssh-keygen -t ed25519
 ```
 
-## Install
-
-clone this repository and execute this command
-
-```
-zsh dotfiles/install.sh
-```
+Register pub key `~/.ssh/id_ed25519` to https://github.com/settings/keys
