@@ -20,6 +20,8 @@ Use homebrew. See https://brew.sh/
 
 ```bash
 brew install git
+git config --global user.name <name>
+git config --global user.email <mail>
 ```
 
 ### Register sshkey
