@@ -26,13 +26,18 @@ PATH="${HOME}/bin:$PATH"
 #
 
 # needed to pull from private repository
-export GOPRIVATE=github.com/${GH_PRIVATE_ORGANIZATION}
-export PATH=$PATH:$(go env GOPATH)/bin
+if type go &> /dev/null; then
+  export GOPRIVATE=github.com/${GH_PRIVATE_ORGANIZATION}
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
 
 #
 # direnv settings
 #
-eval "$(direnv hook zsh)"
+
+if type direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 #
 # Autoload Settings
