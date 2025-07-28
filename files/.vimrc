@@ -1,7 +1,7 @@
 syntax on
 
 "about encode
-set encoding=utf-8
+set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp,latin1
 set fileformats=unix
 
 "about tab
