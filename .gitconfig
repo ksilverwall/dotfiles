@@ -1,0 +1,21 @@
+[user]
+	name = Kazuki Tsunemi
+	email = ksilverwall@gmail.com
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[core]
+	autocrlf = input
+	mail = ksilverknowledge@gmail.com
+	excludesfile = /Users/ksilver/.gitignore_global
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[color]
+	ui = auto
+[init]
+	defaultbranch = main
