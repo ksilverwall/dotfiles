@@ -16,6 +16,14 @@ PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 PATH="${HOME}/bin:$PATH"
 
 #
+# Python Settings
+#
+if command -v "pyenv" >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PATH="$HOME/.local/bin:$PATH"
+
+#
 # Nodejs Settings
 #
 
@@ -26,7 +34,7 @@ PATH="${HOME}/bin:$PATH"
 #
 
 # needed to pull from private repository
-if type go &> /dev/null; then
+if command -v "go" >/dev/null 2>&1; then
   export GOPRIVATE=github.com/${GH_PRIVATE_ORGANIZATION}
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
@@ -34,8 +42,7 @@ fi
 #
 # direnv settings
 #
-
-if type direnv &> /dev/null; then
+if command -v "direnv" >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
@@ -55,6 +62,7 @@ compinit
 #
 export PATH=$PATH:~/bin
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 #
 # General Aliases
