@@ -3,31 +3,27 @@ Default Dotfile
 
 ## Setup
 
-clone this repository and execute this command (need git)
+1. Clone this repository with `--bare` option
 
 ```
-cd ~
-git clone git@github.com:ksilverwall/dotfiles.git
-zsh dotfiles/install.sh
+git clone --bare git@github.com:ksilverwall/dotfiles.git $HOME/.dotfiles
 ```
 
-## Appendix: Setup git
-
-
-### Install git first
-
-Use homebrew. See https://brew.sh/
-
-```bash
-brew install git
-git config --global user.name <name>
-git config --global user.email <mail>
-```
-
-### Register sshkey
+2. Enable alias to checkout
 
 ```
-ssh-keygen -t ed25519
+echo "alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> ~/.zshrc
+source ~/.zshrc
 ```
 
-Register pub key `~/.ssh/id_ed25519` to https://github.com/settings/keys
+3. Hide unused file
+
+```
+dotfiles config status.showUntrackedFiles no
+```
+
+4. restore dotfiles
+
+```
+dotfiles checkout
+```
