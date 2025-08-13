@@ -1,3 +1,6 @@
+# use dotfiles
+alias dotfiles='git --git-dir=/Users/ksilverwall/.dotfiles/ --work-tree=/Users/ksilverwall'
+
 function load_optional() {
   if [ -e "${1}" ]; then
     source ${1}
